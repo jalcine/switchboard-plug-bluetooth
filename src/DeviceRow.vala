@@ -58,6 +58,7 @@ public class Bluetooth.DeviceRow : Gtk.ListBoxRow {
 
     private Gtk.Button connect_button;
     private Gtk.Button forget_button;
+    private Gtk.Button rename_button;
     private Gtk.Image state;
     private Gtk.Label state_label;
     private Gtk.LinkButton settings_button;
@@ -144,6 +145,9 @@ public class Bluetooth.DeviceRow : Gtk.ListBoxRow {
         connect_button = new Gtk.Button ();
         connect_button.valign = Gtk.Align.CENTER;
 
+        rename_button = new Gtk.Button ();
+        rename_button.valign = Gtk.Align.CENTER;
+
         size_group.add_widget (connect_button);
 
         var grid = new Gtk.Grid ();
@@ -153,9 +157,10 @@ public class Bluetooth.DeviceRow : Gtk.ListBoxRow {
         grid.attach (overlay, 0, 0, 1, 2);
         grid.attach (label, 1, 0, 1, 1);
         grid.attach (state_label, 1, 1, 1, 1);
-        grid.attach (settings_button, 2, 0, 1, 2);
-        grid.attach (forget_button, 3, 0, 1, 2);
-        grid.attach (connect_button, 4, 0, 1, 2);
+        grid.attach (rename_button, 2, 0, 1, 2);
+        grid.attach (settings_button, 3, 0, 1, 2);
+        grid.attach (forget_button, 4, 0, 1, 2);
+        grid.attach (connect_button, 5, 0, 1, 2);
 
         add (grid);
         show_all ();
